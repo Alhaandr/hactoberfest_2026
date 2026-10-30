@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AegisDesk | Hackathon Presentation Deck</title>
+  <link rel="stylesheet" href="slides.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Presentation Wrapper -->
+  <div class="deck-container">
+    
+    <!-- Top Presentation Header -->
+    <header class="deck-header">
+      <div class="deck-logo">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+        </svg>
+        <span>AEGIS<strong>DESK</strong></span>
+      </div>
+      <div class="deck-progress">
+        <span id="slide-indicator">Slide 1 of 8</span>
+        <div class="progress-bar-track">
+          <div class="progress-bar-fill" id="progress-bar"></div>
+        </div>
+      </div>
+      <div class="deck-controls-hint">
+        <span>Use <kbd>←</kbd> <kbd>→</kbd> or <kbd>Space</kbd> · <kbd>F</kbd> for Fullscreen</span>
+      </div>
+    </header>
+
+    <!-- Slide Canvas -->
+    <main class="slide-canvas">
+      
+      <!-- SLIDE 1: Title & Hero -->
+      <section class="slide active" id="slide-1">
+        <div class="hero-split-layout">
+          <div class="hero-text-col">
+            <div class="slide-badge glow-cyan">HACKATHON DEMO · OPEN-WEIGHT AI</div>
+            <h1 class="hero-title">
+              AEGIS<span class="gradient-cyan">DESK</span>
+            </h1>
+            <p class="hero-tagline">
+              100% Air-Gapped Multimodal Forensic Investigator
+            </p>
+            <p class="hero-desc">
+              Cross-examining audio interrogations, flight manifests, hotel surveillance, and encrypted chat dumps to uncover perjury and alibi contradictions—<strong>entirely offline on consumer CPU</strong>.
+            </p>
+
+            <!-- Visual Hero Badges -->
+            <div class="hero-stats-grid">
+              <div class="stat-card">
+                <div class="stat-icon-wrap cyan">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                  </svg>
+                </div>
+                <div class="stat-value">0 Egress</div>
+                <div class="stat-label">Air-Gapped Sockets</div>
+              </div>
+
+              <div class="stat-card">
+                <div class="stat-icon-wrap emerald">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                  </svg>
+                </div>
+                <div class="stat-value">Llama 3.2 1B</div>
+                <div class="stat-label">Local Reasoning</div>
+              </div>
+
+              <div class="stat-card">
+                <div class="stat-icon-wrap amber">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polygon points="10 8 16 12 10 16 10 8"></polygon>
+                  </svg>
+                </div>
+                <div class="stat-value">Whisper int8</div>
+                <div class="stat-label">Audio Intelligence</div>
+              </div>
+
+              <div class="stat-card">
+                <div class="stat-icon-wrap purple">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                  </svg>
+                </div>
+                <div class="stat-value">SHA-256</div>
+                <div class="stat-label">Chain of Custody</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-image-col">
+            <div class="hero-image-frame">
+              <img src="assets/hero_forensics.jpg" alt="AegisDesk Command HUD" class="hero-img">
+              <div class="hero-image-tag">
+                <span class="pulsing-dot"></span>
+                <span>LIVE AIR-GAP AUDIT · ZERO EXTERNAL PACKETS</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 2: The Core Problem -->
+      <section class="slide" id="slide-2">
+        <div class="slide-badge glow-rose">THE PROBLEM</div>
+        <h2 class="slide-heading">The $Billion Confidentiality Paradox</h2>
+        <p class="slide-subheading">
+          Investigators have massive multimodal evidence, but <strong>cannot touch cloud LLMs</strong>.
+        </p>
+
+        <div class="comparison-grid">
+          <!-- Cloud LLM Risk -->
+          <div class="comparison-card risk-card">
+            <div class="card-status-header">
+              <span class="status-dot red"></span>
+              <span>CLOUD-BASED PROPRIETARY LLMs (OpenAI, Anthropic, Cloud APIs)</span>
+            </div>
+            <ul class="comparison-list">
+              <li>
+                <strong>Privilege Waiver:</strong> Uploading confidential legal depositions waives attorney-client work-product privilege in court.
+              </li>
+              <li>
+                <strong>Data Leakage & Subpoena Risk:</strong> Sensitive whistleblower audio and trade secrets stored on third-party cloud servers.
+              </li>
+              <li>
+                <strong>Evidence Contamination:</strong> Cloud models are non-deterministic black boxes that fail court chain-of-custody standards.
+              </li>
+              <li>
+                <strong>Connectivity Dependency:</strong> Defense rooms, submarines, and secure SCIFs have zero internet access.
+              </li>
+            </ul>
+            <div class="card-footer-alert red-alert">
+              RESULT: Legal and audit teams are locked out of AI assistance.
+            </div>
+          </div>
+
+          <!-- AegisDesk Solution -->
+          <div class="comparison-card solution-card">
+            <div class="card-status-header">
+              <span class="status-dot green"></span>
+              <span>THE AEGISDESK REVOLUTION (100% AIR-GAPPED OPEN AI)</span>
+            </div>
+            <ul class="comparison-list">
+              <li>
+                <strong>Absolute Privilege:</strong> All data, audio, and reasoning stay on local memory; zero bytes egress the machine.
+              </li>
+              <li>
+                <strong>Active Hardware Isolation:</strong> Process socket monitoring verifies zero network traffic during analysis.
+              </li>
+              <li>
+                <strong>Verifiable Chain of Custody:</strong> Every document and audio file is cryptographically sealed with SHA-256 hashes.
+              </li>
+              <li>
+                <strong>Consumer Hardware Native:</strong> Optimized CPU quantization runs on ordinary field laptops (2 cores, 16GB RAM).
+              </li>
+            </ul>
+            <div class="card-footer-alert green-alert">
+              RESULT: Court-admissible, zero-trust AI forensic power anywhere.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 3: System Architecture -->
+      <section class="slide" id="slide-3">
+        <div class="slide-badge glow-cyan">OPEN-SOURCE ARCHITECTURE</div>
+        <h2 class="slide-heading">The 100% Offline Forensic Pipeline</h2>
+        <p class="slide-subheading">
+          Coordinating small open-weight language models and specialized extractors into a unified local stack.
+        </p>
+
+        <!-- Visual Architecture Diagram -->
+        <div class="architecture-diagram">
+          <div class="arch-layer">
+            <div class="arch-box input-box">
+              <div class="arch-box-title">MULTIMODAL EVIDENCE INGESTION</div>
+              <div class="arch-box-content">
+                <span class="chip">🎙️ Audio (.wav, .mp3)</span>
+                <span class="chip">📄 Scanned PDFs</span>
+                <span class="chip">💬 Mobile Cellebrite Dumps</span>
+                <span class="chip">📹 CCTV & Sensor Logs</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="arch-connector">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <polyline points="19 12 12 19 5 12"></polyline>
+            </svg>
+          </div>
+
+          <div class="arch-layer grid-3">
+            <div class="arch-box engine-box">
+              <div class="engine-badge">SPEECH ENGINE</div>
+              <div class="engine-name">faster-whisper</div>
+              <div class="engine-desc">CTranslate2 int8 CPU Quantization. Granular sub-second timestamps.</div>
+            </div>
+
+            <div class="arch-box engine-box">
+              <div class="engine-badge">DOCUMENT CORE</div>
+              <div class="engine-name">pypdf & PyMuPDF</div>
+              <div class="engine-desc">Zero-dependency local text, metadata, and structural extraction.</div>
+            </div>
+
+            <div class="arch-box engine-box">
+              <div class="engine-badge">AIR-GAP AUDITOR</div>
+              <div class="engine-name">psutil + SHA-256</div>
+              <div class="engine-desc">Active socket descriptor scanning & forensic integrity verification.</div>
+            </div>
+          </div>
+
+          <div class="arch-connector">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <polyline points="19 12 12 19 5 12"></polyline>
+            </svg>
+          </div>
+
+          <div class="arch-layer">
+            <div class="arch-box llm-box">
+              <div class="llm-header">
+                <span class="llm-title">LOCAL REASONING & CROSS-EXAMINATION ENGINE</span>
+                <span class="llm-tag">Ollama + Llama 3.2 1B (or Qwen 2.5 3B)</span>
+              </div>
+              <div class="llm-features">
+                <span>⚡ Strict JSON Schema Extraction</span>
+                <span>⚖️ Contradiction & Perjury Scoring</span>
+                <span>⏱️ Unified Chronology Synthesis</span>
+                <span>🗺️ Entity Disambiguation</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="arch-connector">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <polyline points="19 12 12 19 5 12"></polyline>
+            </svg>
+          </div>
+
+          <div class="arch-layer grid-4">
+            <div class="output-pill cyan">Contradiction Matrix</div>
+            <div class="output-pill emerald">Master Timeline</div>
+            <div class="output-pill purple">Entity Graph</div>
+            <div class="output-pill amber">Court-Ready Dossier</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 4: Case Study - Operation Nightfall -->
+      <section class="slide" id="slide-4">
+        <div class="slide-badge glow-amber">LIVE DEMO CASE</div>
+        <h2 class="slide-heading">Case Study: "Operation Nightfall"</h2>
+        <p class="slide-subheading">
+          How AegisDesk disproves an ironclad perjury alibi by cross-referencing 4 conflicting sources.
+        </p>
+
+        <div class="case-grid">
+          <!-- Evidence 1 -->
+          <div class="case-card">
+            <div class="case-card-header">
+              <span class="case-type-badge audio">🎙️ AUDIO INTERVIEW</span>
+              <span class="case-id">EV-001</span>
+            </div>
+            <div class="case-title">Marcus Vance Sworn Statement</div>
+            <div class="case-quote">
+              "I never left Chicago on October 14th. I was having dinner at Le Petit Bistro on Michigan Ave from 7:30 PM to 10:15 PM."
+            </div>
+            <div class="case-claim status-false">CLAIM: Physically in Chicago</div>
+          </div>
+
+          <!-- Evidence 2 -->
+          <div class="case-card">
+            <div class="case-card-header">
+              <span class="case-type-badge doc">✈️ FLIGHT MANIFEST</span>
+              <span class="case-id">EV-002</span>
+            </div>
+            <div class="case-title">American Airlines AA-492 Manifest</div>
+            <div class="case-quote">
+              "Boarded ORD Gate K12 at 4:02 PM. Landed Dallas Fort Worth (DFW) at 6:51 PM. Passenger: Vance, Marcus (Seat 04B)."
+            </div>
+            <div class="case-claim status-true">FACT: Landed in Dallas at 6:51 PM</div>
+          </div>
+
+          <!-- Evidence 3 -->
+          <div class="case-card">
+            <div class="case-card-header">
+              <span class="case-type-badge log">📹 HOTEL ACCESS LOG</span>
+              <span class="case-id">EV-003</span>
+            </div>
+            <div class="case-title">Dallas Grand Hotel CCTV & Keycard</div>
+            <div class="case-quote">
+              "20:04 CST: Keycard issued to Marcus Vance. 20:12 CST: Camera 4 captures subject entering Room 402 with dark duffel bag."
+            </div>
+            <div class="case-claim status-true">FACT: In Dallas Hotel at 8:12 PM</div>
+          </div>
+
+          <!-- Evidence 4 -->
+          <div class="case-card">
+            <div class="case-card-header">
+              <span class="case-type-badge chat">💬 ENCRYPTED CHAT</span>
+              <span class="case-id">EV-004</span>
+            </div>
+            <div class="case-title">Cellebrite Signal Extraction</div>
+            <div class="case-quote">
+              "[20:45 CST] Marcus: 'Package secured in Dallas room 402. Don't call this burner again.' Contact: '$250k escrow sent.'"
+            </div>
+            <div class="case-claim status-true">FACT: Confirms package drop in Dallas</div>
+          </div>
+        </div>
+
+        <div class="case-bottom-banner">
+          <span class="banner-alert-tag">⚡ MODEL INFERENCE DISCOVERY</span>
+          <span>AegisDesk detects <strong>Irreconcilable Alibi Contradiction</strong>: Suspect claims Chicago presence at 8:00 PM while DFW flight, Dallas CCTV, and burner text place him 900 miles away.</span>
+        </div>
+      </section>
+
+      <!-- SLIDE 5: The Contradiction Matrix UI -->
+      <section class="slide" id="slide-5">
+        <div class="slide-badge glow-rose">CORE CAPABILITY</div>
+        <h2 class="slide-heading">The Automated Contradiction Matrix</h2>
+        <p class="slide-subheading">
+          Precision quote comparison with forensic reasoning and severity scoring.
+        </p>
+
+        <!-- Mockup of the Contradiction Card -->
+        <div class="ui-mockup-frame">
+          <div class="mockup-header">
+            <div class="mockup-dots">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="mockup-title">AEGISDESK INTELLIGENCE CONSOLE — [CONTRADICTION MATRIX VIEW]</div>
+          </div>
+
+          <div class="mockup-body">
+            <div class="mockup-card">
+              <div class="mockup-card-top">
+                <div class="mockup-card-title">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f43f5e" stroke-width="2.5">
+                    <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+                    <line x1="12" y1="9" x2="12" y2="13"></line>
+                    <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                  </svg>
+                  Direct Geographical Alibi Conflict (Chicago vs. Dallas)
+                </div>
+                <div class="mockup-badge">HIGH SEVERITY · LOCATION & TIMELINE</div>
+              </div>
+
+              <div class="mockup-split-quotes">
+                <div class="mockup-quote-box">
+                  <div class="quote-header">[SOURCE A: audio_interrogation_vance.wav]</div>
+                  <div class="quote-content">
+                    "On October 14th, I never left Chicago. I was having dinner at Le Petit Bistro on Michigan Avenue from 7:30 PM until nearly 10:15 PM."
+                  </div>
+                </div>
+
+                <div class="mockup-quote-box">
+                  <div class="quote-header">[SOURCE B: flight_manifest_aa492.pdf]</div>
+                  <div class="quote-content">
+                    "ARRIVAL: Dallas Fort Worth (DFW) - Scheduled: 6:45 PM (Actual: 6:51 PM). PASSENGER: VANCE, MARCUS, SEAT: 04B (First Class)."
+                  </div>
+                </div>
+              </div>
+
+              <div class="mockup-reasoning-box">
+                <span class="reasoning-label">FORENSIC REASONING:</span>
+                A subject cannot physically be dining in Chicago and deplaning in Dallas simultaneously. The AA-492 gate biometric scan (4:02 PM) and DFW arrival scan (6:51 PM) definitively refute the testimonial alibi, establishing probable cause for perjury.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 6: Reconstructed Master Timeline -->
+      <section class="slide" id="slide-6">
+        <div class="slide-badge glow-cyan">TEMPORAL CORRELATION</div>
+        <h2 class="slide-heading">Reconstructed Master Timeline</h2>
+        <p class="slide-subheading">
+          Harmonizing scattered, heterogeneous timestamps into an unbroken sequence of facts.
+        </p>
+
+        <!-- Timeline Graphic -->
+        <div class="timeline-visual">
+          <div class="t-node">
+            <div class="t-time">15:45 CST</div>
+            <div class="t-circle cyan-circle"></div>
+            <div class="t-card">
+              <div class="t-card-src">signal_extraction.txt</div>
+              <div class="t-card-event">Marcus texts: "Heading to ORD now. Meeting courier tonight in Dallas."</div>
+            </div>
+          </div>
+
+          <div class="t-node">
+            <div class="t-time">16:02 CST</div>
+            <div class="t-circle cyan-circle"></div>
+            <div class="t-card">
+              <div class="t-card-src">flight_manifest_aa492.pdf</div>
+              <div class="t-card-event">Biometric boarding gate scan verified at Chicago O'Hare Gate K12.</div>
+            </div>
+          </div>
+
+          <div class="t-node">
+            <div class="t-time">18:51 CST</div>
+            <div class="t-circle cyan-circle"></div>
+            <div class="t-card">
+              <div class="t-card-src">flight_manifest_aa492.pdf</div>
+              <div class="t-card-event">Flight AA-492 touches down at Dallas Fort Worth (DFW).</div>
+            </div>
+          </div>
+
+          <div class="t-node conflict-node">
+            <div class="t-time">19:30 CST</div>
+            <div class="t-circle red-circle"></div>
+            <div class="t-card conflict-card">
+              <div class="t-card-src alert">audio_interrogation.wav [PERJURY ALIBI]</div>
+              <div class="t-card-event">Marcus claims to begin dinner at Le Petit Bistro in Chicago. (REFUTED)</div>
+            </div>
+          </div>
+
+          <div class="t-node">
+            <div class="t-time">20:12 CST</div>
+            <div class="t-circle cyan-circle"></div>
+            <div class="t-card">
+              <div class="t-card-src">dallas_hotel_surveillance.txt</div>
+              <div class="t-card-event">CCTV Camera 4 captures Marcus entering Dallas Hotel Room 402 with duffel.</div>
+            </div>
+          </div>
+
+          <div class="t-node">
+            <div class="t-time">20:45 CST</div>
+            <div class="t-circle cyan-circle"></div>
+            <div class="t-card">
+              <div class="t-card-src">signal_extraction.txt</div>
+              <div class="t-card-event">Marcus texts contact: "Package secured in room 402." $250k escrow triggered.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 7: Performance & Hardware Benchmarks -->
+      <section class="slide" id="slide-7">
+        <div class="slide-badge glow-emerald">EFFICIENCY & BENCHMARKS</div>
+        <h2 class="slide-heading">Edge Performance on Consumer Hardware</h2>
+        <p class="slide-subheading">
+          Proving that sophisticated multimodal AI does <strong>not</strong> require enterprise data centers.
+        </p>
+
+        <div class="benchmarks-grid">
+          <div class="bench-card">
+            <div class="bench-num">2 Cores</div>
+            <div class="bench-title">Minimum Hardware</div>
+            <div class="bench-desc">Runs entirely on a standard Intel Core i7-7600U dual-core CPU with 16 GB RAM and no discrete GPU.</div>
+          </div>
+
+          <div class="bench-card">
+            <div class="bench-num">1.3 GB</div>
+            <div class="bench-title">Model Footprint</div>
+            <div class="bench-desc">Llama 3.2 1B quantized weights fit comfortably in low-power RAM with sub-second token latency.</div>
+          </div>
+
+          <div class="bench-card">
+            <div class="bench-num">0 ms</div>
+            <div class="bench-title">Network Latency</div>
+            <div class="bench-desc">100% on-device execution eliminates network round-trips, rate limits, and API subscription bills.</div>
+          </div>
+
+          <div class="bench-card">
+            <div class="bench-num">&lt; 1 ms</div>
+            <div class="bench-title">Cryptographic Seal</div>
+            <div class="bench-desc">Instantaneous SHA-256 fingerprinting ensures evidence cannot be modified without detection.</div>
+          </div>
+        </div>
+
+        <div class="quote-banner">
+          "AegisDesk proves that open-weight small language models (SLMs) can outperform generic cloud models on specialized domain tasks like legal contradiction discovery—with absolute privacy."
+        </div>
+      </section>
+
+      <!-- SLIDE 8: Vision & Hackathon Conclusion -->
+      <section class="slide" id="slide-8">
+        <div class="slide-badge glow-cyan">LOOKING FORWARD</div>
+        <h2 class="slide-heading">The Future of Sovereign Legal AI</h2>
+        <p class="slide-subheading">
+          Democratizing elite investigative intelligence for every defender, journalist, and auditor.
+        </p>
+
+        <div class="future-grid">
+          <div class="future-card">
+            <div class="future-icon">📱</div>
+            <div class="future-title">Single-Binary Electron App</div>
+            <div class="future-desc">Package Ollama, Whisper, and the frontend into an offline desktop installer for Windows, macOS, and Linux.</div>
+          </div>
+
+          <div class="future-card">
+            <div class="future-icon">👁️</div>
+            <div class="future-title">On-Device OCR & Vision</div>
+            <div class="future-desc">Integrate SmolVLM or PaliGemma 2 to decipher blurry handwritten notes, bank checks, and security badges.</div>
+          </div>
+
+          <div class="future-card">
+            <div class="future-icon">📚</div>
+            <div class="future-title">Offline Vector RAG</div>
+            <div class="future-desc">Scale to 500,000+ page investigative archives using local SQLite vector indexes and quantized embedding models.</div>
+          </div>
+        </div>
+
+        <div class="closing-callout">
+          <div class="closing-brand">AEGIS<span>DESK</span></div>
+          <div class="closing-pitch">Open-Weight AI · Zero Cloud Egress · Verified Chain of Custody</div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Bottom Navigation Bar -->
+    <footer class="deck-footer">
+      <div class="deck-nav-buttons">
+        <button id="btn-prev" class="nav-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+          Previous
+        </button>
+        <button id="btn-next" class="nav-btn primary">
+          Next
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+      </div>
+
+      <div class="deck-shortcuts">
+        <span>Press <kbd>F</kbd> for Fullscreen</span>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="slides.js"></script>
+</body>
+</html>
